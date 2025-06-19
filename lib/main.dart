@@ -8,7 +8,6 @@ void main() {
         title: Text('MoodBoard Tracker', style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold, color: Colors.pink, shadows: [
           Shadow(blurRadius: 10.0, color: Colors.black, offset: Offset(2.0,2.0))
         ]
-
         ),),
         backgroundColor: Colors.pinkAccent[700],
       ),
