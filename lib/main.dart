@@ -140,7 +140,7 @@ class Profile extends StatelessWidget {
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
                 ),
                 child: Text(
-                  'LOGOUT',
+                  'Logout',
                   style: TextStyle(
                     fontSize: 20,
                     color: Colors.pinkAccent[700],
