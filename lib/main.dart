@@ -10,7 +10,7 @@ class Profile extends StatelessWidget {
   const Profile({super.key});
 
   @override
-  Widget build(BuildContext context){
+  Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.pink[50],
       appBar: AppBar(
@@ -134,8 +134,7 @@ class Profile extends StatelessWidget {
             // LOGOUT Button
             Center(
               child: OutlinedButton(
-                onPressed: () {
-                },
+                onPressed: () {},
                 style: OutlinedButton.styleFrom(
                   side: BorderSide(color: Colors.pinkAccent),
                   padding: EdgeInsets.symmetric(horizontal: 40, vertical: 12),
