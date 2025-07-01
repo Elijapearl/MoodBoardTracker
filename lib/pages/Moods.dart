@@ -1,4 +1,4 @@
-class Moods{
+class Moods {
   String name;
   String mood;
   String date;

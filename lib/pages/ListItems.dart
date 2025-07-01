@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:moodboard_app/pages/Addmood.dart';
 import 'package:moodboard_app/pages/ItemCard.dart';
 import 'Moods.dart';
 
@@ -20,10 +21,10 @@ class _ListitemsState extends State<Listitems> {
     super.initState();
     moods = [
       Moods(name: 'Elija', mood: 'Happy', date: today),
-      Moods(name: 'Caila', mood: 'Happy', date: today),
-      Moods(name: 'Joy', mood: 'Disappointed', date: today),
-      Moods(name: 'Princes', mood: 'Confused', date: today),
-      Moods(name: 'Yesha', mood: 'In love', date: today),
+      Moods(name: 'Elija', mood: 'Sad', date: today),
+      Moods(name: 'Elija', mood: 'Disappointed', date: today),
+      Moods(name: 'Elija', mood: 'Confused', date: today),
+      Moods(name: 'Elija', mood: 'In love', date: today),
     ];
   }
 
@@ -37,7 +38,7 @@ class _ListitemsState extends State<Listitems> {
           style: TextStyle(
             fontSize: 30,
             fontWeight: FontWeight.bold,
-            color: Colors.pinkAccent,
+            color: Colors.pink,
             shadows: [
               Shadow(
                 blurRadius: 10.0,
@@ -50,36 +51,58 @@ class _ListitemsState extends State<Listitems> {
         centerTitle: true,
         backgroundColor: Colors.pinkAccent[700],
       ),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
-        child: Column(
-          children: [
-            Center(
+      body: Column(
+        children: [
+          SizedBox(height: 10),
+          Center(
+            child: Text(
+              'My Mood',
+              style: TextStyle(
+                fontSize: 26,
+                fontWeight: FontWeight.bold,
+                color: Colors.pink[800],
+              ),
+            ),
+          ),
+          SizedBox(height: 10),
+          Expanded(
+            child: ListView.builder(
+              itemCount: moods.length,
+              itemBuilder: (context, index) {
+                return Center(
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 8.0),
+                    child: Itemcard(moods: moods[index]),
+                  ),
+                );
+              },
+            ),
+          ),
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.all(16.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Addmood()),
+                );
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: Colors.pinkAccent[200],
+                padding: EdgeInsets.symmetric(horizontal: 30, vertical: 15),
+              ),
               child: Text(
-                'My Mood',
+                'Add Mood',
                 style: TextStyle(
-                  fontSize: 26,
+                  color: Colors.white,
+                  fontSize: 18,
                   fontWeight: FontWeight.bold,
-                  color: Colors.pink[800],
                 ),
               ),
             ),
-            SizedBox(height: 12),
-            Expanded(
-              child: ListView.builder(
-                itemCount: moods.length,
-                itemBuilder: (context, index) {
-                  return Center(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 8.0),
-                      child: Itemcard(moods: moods[index]),
-                    ),
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
   }
