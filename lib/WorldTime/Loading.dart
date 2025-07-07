@@ -23,7 +23,6 @@ class _LoadingState extends State<Loading> {
       'isDaytime': instance.isDaytime,
     });
   }
-
   @override
   void initState() {
     super.initState();
